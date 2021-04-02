@@ -4,6 +4,12 @@ import org.apache.spark.sql.SparkSession
 
 object SpatialQuery extends App{
 
+  //----------------Function--------------------
+  // Name: ST_Contains
+  // Parameters: queryRectangle:String, pointString:String
+  // Return type: Boolean
+  // Description: The function checks if the point is inside or on boundary of the rectangle
+  //--------------------------------------------
   def ST_Contains(queryRectangle:String, pointString:String): Boolean = {
 
     // Split the points string to get X-axis and Y-axis values.
@@ -47,6 +53,13 @@ object SpatialQuery extends App{
     return false
   }
 
+  //----------------Function--------------------
+  // Name: ST_Within
+  // Parameters: pointString1:String, pointString2:String, distance:Double
+  // Return type: Boolean
+  // Description: The function checks if the distance between two points
+  // are within the given distance
+  //--------------------------------------------
   def ST_Within(pointString1:String, pointString2:String, distance:Double): Boolean = {
     
     // Split the points string to get X-axis and Y-axis values.
